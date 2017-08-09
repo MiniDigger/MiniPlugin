@@ -23,8 +23,21 @@
     -->
 
     <extensions defaultExtensionNs="com.intellij">
-        <!-- Add your extensions here -->
+
+        <facetType implementation="me.minidigger.miniplugin.facet.VGLFacetType" />
+
+        <!-- File templates are for project creations -->
+        <fileTemplateGroup implementation="me.minidigger.miniplugin.util.VGLFileTemplateGroupFactory"/>
+
+        <!-- Project View Node Decorators provide the project icons -->
+        <projectViewNodeDecorator implementation="me.minidigger.miniplugin.platform.VGLProjectViewNodeDecorator"/>
         <deadCode implementation="me.minidigger.miniplugin.PlatformAnnotationEntryPoint"/>
+
+        <!-- Application Configurable provides the VGL settings page -->
+        <applicationConfigurable displayName="VGL Development"
+                                 id="Settings.VGL"
+                                 groupId="language"
+                                 instance="me.minidigger.miniplugin.VGLSettings"/>
 
         <localInspection displayName="Missing JSR-305 Annotation"
                          groupName="MiniPlugin"
