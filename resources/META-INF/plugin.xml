@@ -9,35 +9,17 @@
     ]]></description>
 
     <change-notes><![CDATA[
-      No changes yet
+      * -- some date --
+         * added support for VGL
     ]]>
     </change-notes>
 
-    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
     <idea-version since-build="145.0"/>
 
-    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
-         on how to target different products -->
-    <!-- uncomment to enable plugin in all products
-    <depends>com.intellij.modules.lang</depends>
-    -->
-
     <extensions defaultExtensionNs="com.intellij">
-
-        <facetType implementation="me.minidigger.miniplugin.facet.VGLFacetType" />
-
-        <!-- File templates are for project creations -->
-        <fileTemplateGroup implementation="me.minidigger.miniplugin.util.VGLFileTemplateGroupFactory"/>
-
-        <!-- Project View Node Decorators provide the project icons -->
-        <projectViewNodeDecorator implementation="me.minidigger.miniplugin.platform.VGLProjectViewNodeDecorator"/>
-        <deadCode implementation="me.minidigger.miniplugin.PlatformAnnotationEntryPoint"/>
-
-        <!-- Application Configurable provides the VGL settings page -->
-        <applicationConfigurable displayName="VGL Development"
-                                 id="Settings.VGL"
-                                 groupId="language"
-                                 instance="me.minidigger.miniplugin.VGLSettings"/>
+        <!-- module type to all creation of VGL module -->
+        <moduleType id="VGL_MODULE_TYPE"
+                    implementationClass="me.minidigger.miniplugin.module.VGLModuleType"/>
 
         <localInspection displayName="Missing JSR-305 Annotation"
                          groupName="MiniPlugin"
