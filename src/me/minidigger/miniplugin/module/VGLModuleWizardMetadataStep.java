@@ -38,8 +38,6 @@ public class VGLModuleWizardMetadataStep extends ModuleWizardStep {
 
     @Override
     public boolean isStepVisible() {
-        // TODO why is this not working?
-        System.out.println("check if visible " + creator.getProjectType().equals(VGLProjectType.ADDON));
         return creator.getProjectType().equals(VGLProjectType.ADDON);
     }
 
