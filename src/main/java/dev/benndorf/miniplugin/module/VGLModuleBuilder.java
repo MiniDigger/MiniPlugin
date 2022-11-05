@@ -1,4 +1,4 @@
-package me.minidigger.miniplugin.module;
+package dev.benndorf.miniplugin.module;
 
 import com.intellij.ide.util.projectWizard.JavaModuleBuilder;
 import com.intellij.ide.util.projectWizard.ModuleWizardStep;
@@ -18,7 +18,7 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
 
-import me.minidigger.miniplugin.assets.Assets;
+import dev.benndorf.miniplugin.assets.Assets;
 
 public class VGLModuleBuilder extends JavaModuleBuilder {
 
@@ -40,7 +40,8 @@ public class VGLModuleBuilder extends JavaModuleBuilder {
     }
 
     @Override
-    public ModuleWizardStep[] createWizardSteps(@NotNull WizardContext wizardContext, @NotNull ModulesProvider modulesProvider) {
+    public ModuleWizardStep[] createWizardSteps(@NotNull WizardContext wizardContext,
+            @NotNull ModulesProvider modulesProvider) {
         return new ModuleWizardStep[]{
                 new VGLModuleWizardMetadataStep(creator)
         };

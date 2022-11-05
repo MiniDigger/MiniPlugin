@@ -1,6 +1,6 @@
 # MiniPlugin
 
-Small intellij plugin that makes my life easier. 
+Small intellij plugin that makes my life easier.
 
 Currently only adds a inspection to detect if methods are properly annotated with JSR-305 annotations.
 

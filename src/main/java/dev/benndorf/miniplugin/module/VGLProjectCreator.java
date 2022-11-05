@@ -1,4 +1,4 @@
-package me.minidigger.miniplugin.module;
+package dev.benndorf.miniplugin.module;
 
 import java.util.HashSet;
 import java.util.Set;

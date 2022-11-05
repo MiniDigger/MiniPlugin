@@ -1,4 +1,4 @@
-package me.minidigger.miniplugin;
+package dev.benndorf.miniplugin;
 
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.ServiceManager;
@@ -24,6 +24,7 @@ public class VGLSettings implements PersistentStateComponent<VGLSettings.State> 
     }
 
     class State {
+
         boolean testSetting = true;
     }
 

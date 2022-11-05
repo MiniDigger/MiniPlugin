@@ -1,0 +1,43 @@
+<idea-plugin>
+  <id>me.minidigger.miniplugin</id>
+  <name>MiniPlugin</name>
+  <version>2.0</version>
+  <vendor email="miniplugin@benndorf.dev" url="https://benndorf.dev">MiniDigger</vendor>
+
+  <description><![CDATA[
+      Small Plugin that makes my life easier, most notably includes an inspection to find missing nullability annotations
+    ]]></description>
+
+  <change-notes><![CDATA[
+      * -- some date --
+         * added support for VGL
+    ]]>
+  </change-notes>
+
+  <idea-version since-build="145.0"/>
+
+  <depends>com.intellij.java</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- module type to all creation of VGL module -->
+    <moduleType id="VGL_MODULE_TYPE"
+      implementationClass="dev.benndorf.miniplugin.module.VGLModuleType"/>
+
+    <localInspection displayName="Missing nullability annotation"
+      groupName="MiniPlugin"
+      language="JAVA"
+      enabledByDefault="true"
+      level="ERROR"
+      hasStaticDescription="false"
+      implementationClass="dev.benndorf.miniplugin.MissingNullabilityAnnotationInspection"/>
+  </extensions>
+
+  <!--<actions>
+    <group id="MyPlugin.SampleMenu" text="_MiniPlugin" description="MiniPlugin">
+      <add-to-group group-id="MainMenu" anchor="last"/>
+      <action id="Myplugin.Textboxes" class="dev.benndorf.miniplugin.TextBoxes"
+        text="Text _Boxes" description="A test menu item"/>
+    </group>
+  </actions>-->
+
+</idea-plugin>

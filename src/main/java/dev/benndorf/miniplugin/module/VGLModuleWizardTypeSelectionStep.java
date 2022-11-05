@@ -1,4 +1,4 @@
-package me.minidigger.miniplugin.module;
+package dev.benndorf.miniplugin.module;
 
 import com.intellij.ide.util.projectWizard.ModuleWizardStep;
 import com.intellij.openapi.options.ConfigurationException;
@@ -59,9 +59,11 @@ public class VGLModuleWizardTypeSelectionStep extends ModuleWizardStep {
     private void refreshInfoPane() {
         StringBuilder text = new StringBuilder("");
         if (checkOutVGlButton.isSelected()) {
-            text.append("The VoxelGamesLib framework project will be checked out and setup so that you are able to develop on vgl itself. \n");
+            text.append(
+                    "The VoxelGamesLib framework project will be checked out and setup so that you are able to develop on vgl itself. \n");
             if (vglIncludeTestServer.isSelected()) {
-                text.append("Additionally, the testserver will be checked out and setup so that you can easily test your changes. \n");
+                text.append(
+                        "Additionally, the testserver will be checked out and setup so that you can easily test your changes. \n");
             }
             if (vglIncludeDeathmatch.isSelected() || vglInclude1vs1.isSelected()) {
                 text.append("Additonally, the following gamemodes will be installed: \n");
@@ -73,9 +75,11 @@ public class VGLModuleWizardTypeSelectionStep extends ModuleWizardStep {
                 }
             }
         } else if (newAddonButton.isSelected()) {
-            text.append("A new addon project will be created, so that you can get started developing gamemodes using VoxelGamesLib. \n");
+            text.append(
+                    "A new addon project will be created, so that you can get started developing gamemodes using VoxelGamesLib. \n");
             if (addonIncludeTestServer.isSelected()) {
-                text.append("Additionally, the testserver will be checked out and setup so that you can easily test your new gamemode. \n");
+                text.append(
+                        "Additionally, the testserver will be checked out and setup so that you can easily test your new gamemode. \n");
             }
         }
         infoPane.setText(text.toString());
@@ -84,10 +88,15 @@ public class VGLModuleWizardTypeSelectionStep extends ModuleWizardStep {
     @Override
     public void updateDataModel() {
         creator.setProjectType(checkOutVGlButton.isSelected() ? VGLProjectType.FRAMEWORK : VGLProjectType.ADDON);
-        if (addonIncludeTestServer.isSelected() || vglIncludeTestServer.isSelected())
+        if (addonIncludeTestServer.isSelected() || vglIncludeTestServer.isSelected()) {
             creator.addAdditionalModule("testserver");
-        if (vglInclude1vs1.isSelected()) creator.addAdditionalModule("1vs1");
-        if (vglIncludeDeathmatch.isSelected()) creator.addAdditionalModule("Deathmatch");
+        }
+        if (vglInclude1vs1.isSelected()) {
+            creator.addAdditionalModule("1vs1");
+        }
+        if (vglIncludeDeathmatch.isSelected()) {
+            creator.addAdditionalModule("Deathmatch");
+        }
     }
 
     @Override

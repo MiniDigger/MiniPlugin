@@ -1,4 +1,4 @@
-package me.minidigger.miniplugin.module;
+package dev.benndorf.miniplugin.module;
 
 import com.intellij.ide.util.projectWizard.ModuleWizardStep;
 import com.intellij.openapi.options.ConfigurationException;
@@ -33,7 +33,8 @@ public class VGLModuleWizardMetadataStep extends ModuleWizardStep {
         creator.setGroupId(groupId.getText());
         creator.setArtifactId(artifactId.getText());
         creator.setVersion(version.getText());
-        creator.setBuildSystem(buildSystem.getSelectedItem().equals("Gradle") ? BuildSystemType.GRADLE : BuildSystemType.MAVEN);
+        creator.setBuildSystem(
+                buildSystem.getSelectedItem().equals("Gradle") ? BuildSystemType.GRADLE : BuildSystemType.MAVEN);
     }
 
     @Override

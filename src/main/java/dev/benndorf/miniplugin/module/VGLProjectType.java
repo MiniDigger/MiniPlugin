@@ -1,4 +1,4 @@
-package me.minidigger.miniplugin.module;
+package dev.benndorf.miniplugin.module;
 
 public enum VGLProjectType {
 

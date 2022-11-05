@@ -1,4 +1,4 @@
-package me.minidigger.miniplugin.assets;
+package dev.benndorf.miniplugin.assets;
 
 import com.intellij.openapi.util.IconLoader;
 

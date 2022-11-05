@@ -1,16 +1,13 @@
-package me.minidigger.miniplugin.module;
+package dev.benndorf.miniplugin.module;
 
-import com.intellij.ide.util.projectWizard.ModuleWizardStep;
-import com.intellij.ide.util.projectWizard.WizardContext;
 import com.intellij.openapi.module.ModuleType;
 import com.intellij.openapi.module.ModuleTypeManager;
-import com.intellij.openapi.roots.ui.configuration.ModulesProvider;
 
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 
-import me.minidigger.miniplugin.assets.Assets;
+import dev.benndorf.miniplugin.assets.Assets;
 
 public class VGLModuleType extends ModuleType<VGLModuleBuilder> {
 
